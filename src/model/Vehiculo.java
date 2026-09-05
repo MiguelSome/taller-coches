@@ -19,6 +19,7 @@ public Vehiculo(String matricula, String marca, String modelo, TipoCombustible t
 
 }
 
+
 public String getMatricula() {
     return matricula;
 }
@@ -49,6 +50,14 @@ public TipoCombustible getTipoCombustible() {
 
 public void setTipoCombustible(TipoCombustible tipoCombustible) {
     this.tipoCombustible = tipoCombustible;
+}
+
+public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
 }
 
 
