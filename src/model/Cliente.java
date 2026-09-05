@@ -13,7 +13,7 @@ public class Cliente {
     private List<Vehiculo> vehiculos;
 
 public Cliente (String nombre, String apellidos, String dni, String telefono,
-     String email, List<Vehiculo> vehiculos){
+     String email){
 this.nombre = nombre;
 this.apellidos = apellidos;
 this.dni = dni;
