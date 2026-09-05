@@ -34,6 +34,7 @@ public Cliente(List<Vehiculo> vehiculos) {
     this.vehiculos = new ArrayList<>();
 }
 
+
 public String getNombre() {
     return nombre;
 }
@@ -80,6 +81,14 @@ public List<Vehiculo> getVehiculos() {
 
 public void setVehiculos(List<Vehiculo> vehiculos) {
     this.vehiculos = vehiculos;
+}
+
+public Long getId() {
+    return id;
+}
+
+public void setId(Long id) {
+    this.id = id;
 } 
 
 
