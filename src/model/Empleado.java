@@ -12,9 +12,6 @@ public class Empleado {
     private boolean activo;
 public Empleado(){}
 
-
-
-
     public Empleado(String nombre, String apellidos, String dni, String telefono, RolEmpleado rol) {
     this.nombre = nombre;
     this.apellidos = apellidos;
