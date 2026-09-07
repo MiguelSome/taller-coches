@@ -1,18 +1,31 @@
-## Getting Started
+# 🚗 Sistema de Gestión de Taller Mecánico
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Proyecto Java desarrollado con una arquitectura modular en capas (Model-Repository-Service), gestionado con **Maven** y con cobertura de pruebas unitarias usando **JUnit 5** y **Mockito**.
 
-## Folder Structure
+---
 
-The workspace contains two folders by default, where:
+## 🛠️ Tecnologías Utilizadas
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+* ☕ **Java** (JDK 17+)
+* 📦 **Apache Maven** (Gestión de dependencias y build)
+* 🧪 **JUnit 5** (Pruebas unitarias)
+* 🎭 **Mockito** (Simulación de dependencias / Mocks)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+---
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## 📐 Arquitectura del Proyecto
 
-## Dependency Management
+El sistema sigue el principio de separación de responsabilidades:
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+* **`model/`**: Entidades del dominio (`OrdenTaller`, `Pieza`, `Cliente`, `Empleado`, etc.).
+* **`enums/`**: Enumerados de estado (`EstadoOrden`).
+* **`repository/`**: Capa de acceso a datos (patrón Repository con almacenamiento en memoria).
+* **`service/`**: Capa de lógica de negocio (validaciones, transiciones de estado y gestión de stock).
+
+---
+
+## ⚙️ Comandos Útiles (Maven)
+
+Compilar el proyecto:
+```bash
+mvn clean compile
