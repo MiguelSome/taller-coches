@@ -12,6 +12,11 @@ public class Cliente {
     private String email;
     private List<Vehiculo> vehiculos;
 
+
+
+public Cliente() {
+    }
+
 public Cliente (String nombre, String apellidos, String dni, String telefono,
      String email){
 this.nombre = nombre;

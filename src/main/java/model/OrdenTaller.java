@@ -17,6 +17,17 @@ public class OrdenTaller {
 
     public OrdenTaller(){}
 
+    
+
+    public OrdenTaller(Long id, Vehiculo vehiculo, Cliente cliente, EstadoOrden estado) {
+        this.id = id;
+        this.vehiculo = vehiculo;
+        this.cliente = cliente;
+        this.estado = estado;
+    }
+
+
+
     public OrdenTaller(Vehiculo vehiculo, Cliente cliente, Empleado empleado, String descripcion){
     this.vehiculo = vehiculo;
     this.cliente = cliente;
