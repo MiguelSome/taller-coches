@@ -18,8 +18,7 @@ import model.Vehiculo;
 public class AppTaller extends Application {
 
     private TableView<OrdenTaller> tablaOrdenes;
-
-    private void cargarDatosEjemplo() {
+   private void cargarDatosEjemplo() {
     javafx.collections.ObservableList<OrdenTaller> lista = javafx.collections.FXCollections.observableArrayList();
     
     // 1. Crear objetos auxiliares de prueba
@@ -62,29 +61,26 @@ public class AppTaller extends Application {
         TableColumn<OrdenTaller, String> colEstado = new TableColumn<>("Estado");
 
         tablaOrdenes.getColumns().addAll(colId, colCliente, colVehiculo, colEstado);
-
+        root.setCenter(tablaOrdenes);
         // Muestra el ID
-colId.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("id"));
+    colId.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("id"));
 
 // Extrae directamente el nombre del cliente (asumiendo que Cliente tiene getNombre())
-colCliente.setCellValueFactory(cellData -> 
+    colCliente.setCellValueFactory(cellData -> 
     new javafx.beans.property.SimpleStringProperty(
         cellData.getValue().getCliente() != null ? cellData.getValue().getCliente().getNombre() : "Sin cliente"
     )
 );
 
 // Extrae la matrícula del vehículo (asumiendo que Vehiculo tiene getMatricula())
-colVehiculo.setCellValueFactory(cellData -> 
+    colVehiculo.setCellValueFactory(cellData -> 
     new javafx.beans.property.SimpleStringProperty(
         cellData.getValue().getVehiculo() != null ? cellData.getValue().getVehiculo().getMatricula() : "Sin vehículo"
     )
 );
 
 // Muestra el estado del enum
-colEstado.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("estado"));
-
-
-        root.setCenter(tablaOrdenes);
+    colEstado.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("estado"));
 
         // 4. Botones de Acción (Abajo)
         HBox panelBotones = new HBox(10);

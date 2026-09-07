@@ -10,7 +10,11 @@ public class OrdenTallerRepositoryMemoria implements OrdenTallerRepository {
     private List<OrdenTaller>ordenes = new ArrayList<>();
     private Long secuenciasId = 1L;
 
+    
 
+
+    public OrdenTallerRepositoryMemoria() {
+    }
     @Override 
     public OrdenTaller guardar(OrdenTaller orden){
         if(orden.getId()== null){
