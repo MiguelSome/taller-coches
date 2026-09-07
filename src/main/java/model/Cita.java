@@ -1,4 +1,4 @@
-package model;
+/*package model;
 
 import java.time.LocalDateTime;
 import enums.EstadoCita;
@@ -30,4 +30,4 @@ public Cita(Cliente cliente, Vehiculo vehiculo, LocalDateTime fecha, String moti
 
 
 }
-
+*/
