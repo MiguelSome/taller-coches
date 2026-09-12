@@ -6,7 +6,7 @@ Proyecto Java desarrollado con una arquitectura modular en capas (Model-Reposito
 
 ## 🛠️ Tecnologías Utilizadas
 
-* ☕ **Java** (JDK 17+)
+* ☕ **Java** (JDK 25+)
 * 📦 **Apache Maven** (Gestión de dependencias y build)
 * 🧪 **JUnit 5** (Pruebas unitarias)
 * 🎭 **Mockito** (Simulación de dependencias / Mocks)
