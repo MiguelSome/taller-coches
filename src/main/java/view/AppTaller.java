@@ -14,11 +14,18 @@ import javafx.stage.Stage;
 import model.Cliente;
 import model.OrdenTaller;
 import model.Vehiculo;
+import repository.OrdenTallerRepository;
+import repository.OrdenTallerRepositoryMemoria;
+import repository.PiezaRepositoryMemoria;
+import service.OrdenTallerService;
+import service.OrdenTallerServiceImpl;
 
 public class AppTaller extends Application {
 
     private TableView<OrdenTaller> tablaOrdenes;
-   private void cargarDatosEjemplo() {
+    private OrdenTallerService servicio;
+
+    private void cargarDatosEjemplo() {
     javafx.collections.ObservableList<OrdenTaller> lista = javafx.collections.FXCollections.observableArrayList();
     
     // 1. Crear objetos auxiliares de prueba
@@ -30,9 +37,10 @@ public class AppTaller extends Application {
 
     // 2. Crear una orden con tu constructor existente: OrdenTaller(Long, Vehiculo, Cliente, EstadoOrden)
     OrdenTaller orden1 = new OrdenTaller(1L, vehiculo1, cliente1, enums.EstadoOrden.PENDIENTE);
+    OrdenTaller ordenGuardada = this.servicio.registrarOrden(orden1);
     
     // 3. Añadir a la lista
-    lista.add(orden1);
+    lista.add(ordenGuardada);
     
     // 4. Asignar la lista a la TableView
     tablaOrdenes.setItems(lista);
@@ -41,6 +49,11 @@ public class AppTaller extends Application {
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("🛠️ Taller Mecánico - Gestión de Órdenes");
+
+        OrdenTallerRepository repository = new OrdenTallerRepositoryMemoria(); // O la implementación que estés usando
+        PiezaRepositoryMemoria piezaRepository = new PiezaRepositoryMemoria();
+        this.servicio = new OrdenTallerServiceImpl(repository, piezaRepository);
+        
 
         // 1. Panel Principal
         BorderPane root = new BorderPane();
@@ -96,7 +109,7 @@ btnCambiarEstado.setOnAction(event -> {
 
     if (ordenSeleccionada != null) {
         // 2. Por ahora, cambiamos el estado directamente para probar el refresco visual
-        ordenSeleccionada.setEstado(enums.EstadoOrden.EN_PROCESO);
+        servicio.cambiarEstado(ordenSeleccionada.getId(), enums.EstadoOrden.COMPLETADA);
         
         // 3. Refrescamos la tabla para mostrar el cambio
         tablaOrdenes.refresh();

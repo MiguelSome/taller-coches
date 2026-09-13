@@ -12,6 +12,7 @@
     <properties>
         <maven.compiler.release>25</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <main.class>view.AppTaller</main.class>
     </properties>
 
     <dependencies>
@@ -67,7 +68,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.1.1</version>
                 <configuration>
-                    <mainClass>view.AppTaller</mainClass>
+                    <mainClass>${main.class}</mainClass>
                 </configuration>
          </plugin>
             <plugin>

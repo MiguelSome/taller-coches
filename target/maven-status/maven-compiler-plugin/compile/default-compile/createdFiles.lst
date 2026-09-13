@@ -5,8 +5,10 @@ model/OrdenTaller.class
 service/ClienteServiceImpl.class
 repository/ClienteRepositoryMemoria.class
 repository/OrdenTallerRepositoryMemoria.class
+Main$1.class
 service/OrdenTallerServiceImpl.class
 enums/TipoCombustible.class
+Main.class
 repository/PiezaRepositoryMemoria.class
 model/Cliente.class
 repository/EmpleadoRepository.class
@@ -25,5 +27,4 @@ service/EmpleadoServiceImpl.class
 service/ClienteService.class
 repository/VehiculoRepositoryMemoria.class
 repository/PiezaRepository.class
-view/AppTaller.class
 repository/OrdenTallerRepository.class
